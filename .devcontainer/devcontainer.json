@@ -31,7 +31,6 @@
         "foxundermoon.shell-format"
       ],
       "settings": {
-        "latex-workshop.latex.recipe.default": "latexmk (xelatex)",
         "sonarlint.connectedMode.project": {
           "connectionId": "shikanime",
           "projectKey": "shikanime_shikanime"

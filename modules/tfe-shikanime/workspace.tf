@@ -4,50 +4,50 @@ resource "tfe_workspace" "default" {
       name              = "tfe-shikanime"
       display_name      = "Terrafom Cloud Shikanime"
       description       = "Terrafom Cloud Shikanime"
-      working_directory = "terraform/tfe-shikanime"
+      working_directory = "modules/tfe-shikanime"
     }
     github-shikanime = {
       name              = "github-shikanime"
       display_name      = "GitHub Shikanime"
       description       = "GitHub Shikanime"
-      working_directory = "terraform/github-shikanime"
+      working_directory = "modules/github-shikanime"
     }
     github-totalenergies = {
       name              = "github-totalenergies"
       display_name      = "GitHub TotalEnergies"
       description       = "GitHub TotalEnergies"
-      working_directory = "terraform/github-totalenergies"
+      working_directory = "modules/github-totalenergies"
     }
     google-project-shikanime-studio = {
       name              = "google-project-shikanime-studio"
       display_name      = "Google Shikanime Studio"
       description       = "Google Shikanime Studio"
-      working_directory = "terraform/google-project"
+      working_directory = "modules/google-project"
     }
     google-project-shikanime-studio-labs = {
       name              = "google-project-shikanime-studio-labs"
       display_name      = "Google Shikanime Studio Labs"
       description       = "Google Shikanime Studio Labs"
-      working_directory = "terraform/google-project"
+      working_directory = "modules/google-project"
     }
     cloudflare-shikanime-studio = {
       name              = "cloudflare-shikanime-studio"
       display_name      = "Cloudflare Shikanime Studio"
       description       = "Cloudflare Shikanime Studio"
-      working_directory = "terraform/cloudflare-shikanime-studio"
+      working_directory = "modules/cloudflare-shikanime-studio"
     }
     vercel-shikanime-studio = {
       name              = "vercel-shikanime-studio"
       display_name      = "Vercel Shikanime Studio"
       description       = "Vercel Shikanime Studio"
-      working_directory = "terraform/vercel-shikanime-studio"
+      working_directory = "modules/vercel-shikanime-studio"
     }
   }
   name         = each.value.name
   organization = tfe_organization.default.name
   auto_apply   = true
   vcs_repo {
-    identifier                 = "shikanime/shikanime"
+    identifier                 = "shikanime/terraform-shikanime-modules"
     github_app_installation_id = "ghain-jGUbBPSwRf4ceNGo"
   }
   working_directory = each.value.working_directory
