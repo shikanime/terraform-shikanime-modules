@@ -1,0 +1,42 @@
+{
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:jammy",
+  "features": {
+    "ghcr.io/devcontainers/features/nix:1": {
+      "extraNixConfig": "experimental-features = nix-command flakes,accept-flake-config = true,trusted-users = root vscode"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "configureZshAsDefaultShell": true
+    },
+    "ghcr.io/christophermacgown/devcontainer-features/direnv:1": {}
+  },
+  "updateContentCommand": "nix develop --build --impure",
+  "mounts": [
+    {
+      "source": "nix",
+      "target": "/nix",
+      "type": "volume"
+    }
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "jnoortheen.nix-ide",
+        "mkhl.direnv",
+        "yzhang.markdown-all-in-one",
+        "sonarsource.sonarlint-vscode",
+        "hashicorp.terraform",
+        "github.vscode-pull-request-github",
+        "github.vscode-github-actions",
+        "streetsidesoftware.code-spell-checker",
+        "foxundermoon.shell-format"
+      ],
+      "settings": {
+        "latex-workshop.latex.recipe.default": "latexmk (xelatex)",
+        "sonarlint.connectedMode.project": {
+          "connectionId": "shikanime",
+          "projectKey": "shikanime_shikanime"
+        }
+      }
+    }
+  }
+}
