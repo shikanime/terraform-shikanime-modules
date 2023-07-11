@@ -43,9 +43,10 @@ resource "tfe_workspace" "default" {
       working_directory = "modules/vercel-shikanime-studio"
     }
   }
-  name         = each.value.name
-  organization = tfe_organization.default.name
-  auto_apply   = true
+  name              = each.value.name
+  organization      = tfe_organization.default.name
+  terraform_version = "1.5.1"
+  auto_apply        = true
   vcs_repo {
     identifier                 = "shikanime/terraform-shikanime-modules"
     github_app_installation_id = "ghain-jGUbBPSwRf4ceNGo"
