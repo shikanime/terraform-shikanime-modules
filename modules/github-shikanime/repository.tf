@@ -93,3 +93,57 @@ resource "github_actions_secret" "algorithm_cachix_token" {
   secret_name     = "CACHIX_AUTH_TOKEN"
   plaintext_value = var.cachix_token
 }
+
+resource "github_repository" "documentation" {
+  name                 = "documentation"
+  description          = "My collection of documentations"
+  has_issues           = true
+  vulnerability_alerts = true
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+resource "github_branch_protection" "documentation_main" {
+  repository_id  = github_repository.documentation.node_id
+  pattern        = "main"
+  enforce_admins = true
+}
+
+resource "github_branch_protection" "documentation_releases" {
+  repository_id  = github_repository.documentation.node_id
+  pattern        = "release-*.*"
+  enforce_admins = true
+}
+
+resource "github_repository_tag_protection" "documentation" {
+  repository = github_repository.documentation.name
+  pattern    = "v*.*.*"
+}
+
+resource "github_repository" "terraform_shikanime_modules" {
+  name                 = "terraform-shikanime-modules"
+  description          = "My Terraform modules"
+  has_issues           = true
+  vulnerability_alerts = true
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+resource "github_branch_protection" "terraform_shikanime_modules_main" {
+  repository_id  = github_repository.terraform_shikanime_modules.node_id
+  pattern        = "main"
+  enforce_admins = true
+}
+
+resource "github_branch_protection" "terraform_shikanime_modules_releases" {
+  repository_id  = github_repository.terraform_shikanime_modules.node_id
+  pattern        = "release-*.*"
+  enforce_admins = true
+}
+
+resource "github_repository_tag_protection" "terraform_shikanime_modules" {
+  repository = github_repository.terraform_shikanime_modules.name
+  pattern    = "v*.*.*"
+}
