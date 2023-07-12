@@ -1,5 +1,5 @@
 {
-  description = "Shikanime's home configuration";
+  description = "Shikanime's Terraform modules";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-23.05";
