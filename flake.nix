@@ -48,7 +48,6 @@
                 };
                 packages = [
                   pkgs.nixpkgs-fmt
-                  pkgs.qemu
                   pkgs.gh
                   pkgs.glab
                 ];
