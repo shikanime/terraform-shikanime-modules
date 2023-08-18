@@ -41,6 +41,24 @@ variable "gpg_keys" {
       -----END PGP PUBLIC KEY BLOCK-----
       EOF
     }
+    tagheuer = {
+      public_key_armored = <<-EOF
+      -----BEGIN PGP PUBLIC KEY BLOCK-----
+      
+      mDMEZNI+0hYJKwYBBAHaRw8BAQdATGNRbNWO1ywxdQXh0RXPBrqjzXvdfQRIjXvH
+      H5d0ZB20PFdpbGxpYW0gUGhldHNpbm9yYXRoIDx3aWxsaWFtLnBoZXRzaW5vcmF0
+      aC1leHRAdGFnaGV1ZXIuY29tPoiUBBMWCgA8FiEELOolg8OoTxm6tB1LFOPWnGzf
+      hZMFAmTSPtICGwMFCQHhM4AECwkIBwQVCgkIBRYCAwEAAh4FAheAAAoJEBTj1pxs
+      34WTR6kBAIPycVtRrvPhb3fA78FUkK2F8D9eucDNZhOzlSYRVQFVAQDAc7fbsaGx
+      8fVNJ9YT/yizWDItwAyh7sp+R+995UD/Abg4BGTSPtISCisGAQQBl1UBBQEBB0BB
+      9mt5sJVDipMkjvv+01owzE65HMT3yfOTHrCdXmrmdgMBCAeIfgQYFgoAJhYhBCzq
+      JYPDqE8ZurQdSxTj1pxs34WTBQJk0j7SAhsMBQkB4TOAAAoJEBTj1pxs34WTTnUA
+      /i04h4nTl1kgfRVJy4ciwDGIHbqEDWDunOvgY203ZNZhAQDrCcqRD0youfhcQHmo
+      1tfkhU/VUrjhUa7uhF9wQ5wvCQ==
+      =spr0
+      -----END PGP PUBLIC KEY BLOCK-----
+      EOF
+    }
   }
 }
 
