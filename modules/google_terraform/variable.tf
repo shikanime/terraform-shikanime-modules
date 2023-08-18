@@ -32,10 +32,20 @@ variable "terraform_organizations" {
   }
 }
 
-variable "terraform_workspace_ids" {
-  type        = list(string)
-  description = "Terraform organizations"
-  default = [
-    "ws-bCCn34oVHy2V2d1x"
-  ]
+variable "terraform_workspaces" {
+  type = map(object({
+    id           = string
+    project_id   = string
+    name         = string
+    display_name = string
+  }))
+  description = "Terraform workspaces"
+  default = {
+    studio-project-hub = {
+      id           = "ws-bCCn34oVHy2V2d1x"
+      project_id   = "studio-project-hub"
+      name         = "terraform"
+      display_name = "Shikanime Studio Project Hub"
+    }
+  }
 }
