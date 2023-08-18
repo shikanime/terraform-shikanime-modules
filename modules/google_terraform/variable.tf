@@ -41,11 +41,17 @@ variable "terraform_workspaces" {
   }))
   description = "Terraform workspaces"
   default = {
-    studio-project-hub = {
+    google-project-studio-project-hub = {
       id           = "ws-bCCn34oVHy2V2d1x"
       project_id   = "studio-project-hub"
-      name         = "terraform"
+      name         = "terraform-project"
       display_name = "Shikanime Studio Project Hub"
+    }
+    google-terraform-studio-project-hub = {
+      id           = "ws-NSDVP6ZJcpQPcano"
+      project_id   = "studio-project-hub"
+      name         = "terraform"
+      display_name = "Shikanime Studio Project Hub Terraform"
     }
   }
 }

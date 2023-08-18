@@ -3,7 +3,7 @@ module "service_accounts" {
   version = "~> 3.0"
 
   project_id   = var.project_id
-  names        = ["${var.name}-service-account"]
+  names        = [var.name]
   display_name = "${var.display_name} Service Account"
 
   project_roles = [
