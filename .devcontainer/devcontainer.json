@@ -16,26 +16,5 @@
       "target": "/nix",
       "type": "volume"
     }
-  ],
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "jnoortheen.nix-ide",
-        "mkhl.direnv",
-        "yzhang.markdown-all-in-one",
-        "sonarsource.sonarlint-vscode",
-        "hashicorp.terraform",
-        "github.vscode-pull-request-github",
-        "github.vscode-github-actions",
-        "streetsidesoftware.code-spell-checker",
-        "foxundermoon.shell-format"
-      ],
-      "settings": {
-        "sonarlint.connectedMode.project": {
-          "connectionId": "shikanime",
-          "projectKey": "shikanime_shikanime"
-        }
-      }
-    }
-  }
+  ]
 }
