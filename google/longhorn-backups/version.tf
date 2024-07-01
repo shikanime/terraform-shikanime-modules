@@ -1,15 +1,15 @@
 terraform {
   required_version = "~> 1.0"
   required_providers {
-    vercel = {
-      source  = "vercel/vercel"
-      version = "~> 0.14"
+    google = {
+      source  = "hashicorp/google"
+      version = "~> 5.36"
     }
   }
   backend "remote" {
     organization = "shikanime"
     workspaces {
-      name = "vercel-shikanime-studio"
+      prefix = "google-longhorn-backups-"
     }
   }
 }

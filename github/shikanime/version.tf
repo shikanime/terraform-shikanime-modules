@@ -9,7 +9,7 @@ terraform {
   backend "remote" {
     organization = "shikanime"
     workspaces {
-      name = "github-totalenergies"
+      name = "github-shikanime"
     }
   }
 }

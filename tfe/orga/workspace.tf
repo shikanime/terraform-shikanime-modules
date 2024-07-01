@@ -4,43 +4,25 @@ resource "tfe_workspace" "default" {
       name              = "tfe-shikanime"
       display_name      = "Terrafom Cloud Shikanime"
       description       = "Terrafom Cloud Shikanime"
-      working_directory = "modules/tfe-shikanime"
-    }
-    github-shikanime = {
-      name              = "github-shikanime"
-      display_name      = "GitHub Shikanime"
-      description       = "GitHub Shikanime"
-      working_directory = "modules/github-shikanime"
-    }
-    github-totalenergies = {
-      name              = "github-totalenergies"
-      display_name      = "GitHub TotalEnergies"
-      description       = "GitHub TotalEnergies"
-      working_directory = "modules/github-totalenergies"
+      working_directory = "modules/tfe/orga"
     }
     google-project-shikanime-studio = {
       name              = "google-project-shikanime-studio"
       display_name      = "Google Shikanime Studio"
       description       = "Google Shikanime Studio"
-      working_directory = "modules/google-project"
+      working_directory = "modules/google/project"
     }
     google-project-shikanime-studio-labs = {
       name              = "google-project-shikanime-studio-labs"
       display_name      = "Google Shikanime Studio Labs"
       description       = "Google Shikanime Studio Labs"
-      working_directory = "modules/google-project"
+      working_directory = "modules/google/project"
     }
     cloudflare-shikanime-studio = {
       name              = "cloudflare-shikanime-studio"
       display_name      = "Cloudflare Shikanime Studio"
       description       = "Cloudflare Shikanime Studio"
-      working_directory = "modules/cloudflare-shikanime-studio"
-    }
-    vercel-shikanime-studio = {
-      name              = "vercel-shikanime-studio"
-      display_name      = "Vercel Shikanime Studio"
-      description       = "Vercel Shikanime Studio"
-      working_directory = "modules/vercel-shikanime-studio"
+      working_directory = "modules/cloudflare/zone"
     }
   }
   name              = each.value.name

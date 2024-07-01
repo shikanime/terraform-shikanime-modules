@@ -1,7 +1,6 @@
 variable "name" {
   type        = string
   description = "The name for the project"
-  default     = "shikanime-studio"
 }
 
 variable "org_id" {
@@ -10,10 +9,14 @@ variable "org_id" {
   default     = ""
 }
 
-variable "billing_account" {
+variable "billing_account_id" {
   type        = string
   description = "The ID of the billing account to associate this project with"
-  default     = "018C2E-353598-F0F3A5"
+}
+
+variable "location" {
+  type        = string
+  description = "The location for the resources"
 }
 
 variable "tfc_organization_id" {
@@ -24,4 +27,17 @@ variable "tfc_organization_id" {
 variable "tfc_workspace_id" {
   type        = string
   description = "TFC workspace ID"
+}
+
+variable "enabled_apis" {
+  type        = list(string)
+  description = "List of APIs to enable"
+}
+
+variable "members" {
+  type = object({
+    owner = list(string)
+    cloud = list(string)
+  })
+  description = "List of members to grant roles"
 }

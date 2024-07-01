@@ -1,10 +1,10 @@
-module "tfc_service_account" {
+module "operator_service_accounts" {
   source  = "terraform-google-modules/service-accounts/google"
   version = "~> 3.0"
 
   project_id   = module.google_project.project_id
-  names        = ["tfc-service-account"]
-  display_name = "Terraform Cloud Service account"
+  names        = ["infra-operator"]
+  display_name = "Infrastructure Operator Service Account"
 
   project_roles = [
     "${module.google_project.project_id}=>roles/browser",

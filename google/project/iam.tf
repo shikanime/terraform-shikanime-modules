@@ -31,15 +31,29 @@ resource "google_iam_workload_identity_pool_provider" "tfc" {
   }
 }
 
-module "tfc_service_account_iam_bindings" {
+module "operator_service_accounts_iam" {
   source  = "terraform-google-modules/iam/google//modules/service_accounts_iam"
   version = "~> 7.6"
 
-  service_accounts = module.tfc_service_account.emails_list
+  service_accounts = module.operator_service_accounts.emails_list
   project          = module.google_project.project_id
   bindings = {
     "roles/iam.workloadIdentityUser" = [
       "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.tfc.name}/attribute.terraform_workspace_id/${var.tfc_workspace_id}"
     ]
+  }
+}
+
+module "projects_iam" {
+  source  = "terraform-google-modules/iam/google//modules/projects_iam"
+  version = "~> 7.7"
+
+  projects = [
+    module.google_project.project_id,
+  ]
+
+  bindings = {
+    "roles/owner" = var.members.owner,
+    "roles/editor" = var.members.cloud,
   }
 }

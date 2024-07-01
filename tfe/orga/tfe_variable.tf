@@ -102,10 +102,10 @@ resource "tfe_variable" "tfc_workload_provider_id" {
 resource "tfe_variable" "tfc_run_service_account_email" {
   for_each = {
     shikanime-studio = {
-      value = lookup(data.tfe_outputs.default["google-project-shikanime-studio"].values, "tfc_service_account_email", null)
+      value = lookup(data.tfe_outputs.default["google-project-shikanime-studio"].values, "operator_service_accounts_email", null)
     }
     shikanime-studio-labs = {
-      value = lookup(data.tfe_outputs.default["google-project-shikanime-studio-labs"].values, "tfc_service_account_email", null)
+      value = lookup(data.tfe_outputs.default["google-project-shikanime-studio-labs"].values, "operator_service_accounts_email", null)
     }
   }
   key             = "TFC_GCP_RUN_SERVICE_ACCOUNT_EMAIL"
