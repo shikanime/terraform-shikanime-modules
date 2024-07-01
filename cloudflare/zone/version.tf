@@ -9,7 +9,7 @@ terraform {
   backend "remote" {
     organization = "shikanime"
     workspaces {
-      name = "cloudflare-shikanime-studio"
+      name = "cloudflare-zone-shikanime-studio"
     }
   }
 }

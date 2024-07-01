@@ -118,7 +118,6 @@ resource "tfe_variable" "tfc_run_service_account_email" {
 resource "tfe_variable_set" "github_provider" {
   for_each = {
     shikanime     = {}
-    totalenergies = {}
   }
   name         = "GitHub Provider (${each.key})"
   description  = "GitHub Provider variables for ${each.key}"

@@ -1,7 +1,13 @@
 resource "tfe_workspace" "default" {
   for_each = {
-    tfe-shikanime = {
-      name              = "tfe-shikanime"
+    github-org-shikanime = {
+      name              = "github-org-shikanime"
+      display_name      = "GitHub Shikanime"
+      description       = "GitHub Shikanime"
+      working_directory = "modules/github/org"
+    }
+    tfe-org-shikanime = {
+      name              = "tfe-org-shikanime"
       display_name      = "Terrafom Cloud Shikanime"
       description       = "Terrafom Cloud Shikanime"
       working_directory = "modules/tfe/orga"
@@ -18,8 +24,8 @@ resource "tfe_workspace" "default" {
       description       = "Google Shikanime Studio Labs"
       working_directory = "modules/google/project"
     }
-    cloudflare-shikanime-studio = {
-      name              = "cloudflare-shikanime-studio"
+    cloudflare-zone-shikanime-studio = {
+      name              = "cloudflare-zone-shikanime-studio"
       display_name      = "Cloudflare Shikanime Studio"
       description       = "Cloudflare Shikanime Studio"
       working_directory = "modules/cloudflare/zone"
@@ -84,7 +90,7 @@ resource "tfe_workspace_variable_set" "google_provider" {
 
 resource "tfe_workspace_variable_set" "cloudflare_provider" {
   for_each = {
-    cloudflare-shikanime-studio = {
+    cloudflare-zone-shikanime-studio = {
       variable_set_id = tfe_variable_set.cloudflare_provider["shikanime-studio"].id
     }
   }
@@ -94,11 +100,8 @@ resource "tfe_workspace_variable_set" "cloudflare_provider" {
 
 resource "tfe_workspace_variable_set" "github_provider" {
   for_each = {
-    github-shikanime = {
+    github-org-shikanime = {
       variable_set_id = tfe_variable_set.github_provider["shikanime"].id
-    }
-    github-totalenergies = {
-      variable_set_id = tfe_variable_set.github_provider["totalenergies"].id
     }
   }
   workspace_id    = tfe_workspace.default[each.key].id
@@ -107,7 +110,7 @@ resource "tfe_workspace_variable_set" "github_provider" {
 
 resource "tfe_workspace_variable_set" "wakatime" {
   for_each = {
-    github-shikanime = {
+    github-org-shikanime = {
       variable_set_id = tfe_variable_set.wakatime["shikanime"].id
     }
   }
