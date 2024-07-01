@@ -1,4 +1,4 @@
-resource "tfe_run_trigger" "tfc" {
+resource "tfe_run_trigger" "default" {
   for_each = {
     google-project-shikanime-studio = {
       workspace_id = tfe_workspace.default["tfe-shikanime"].id

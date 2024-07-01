@@ -9,7 +9,7 @@ terraform {
   backend "remote" {
     organization = "shikanime"
     workspaces {
-      name = "tfe-shikanime"
+      prefix = "tfe-orga-"
     }
   }
 }

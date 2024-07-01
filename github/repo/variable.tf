@@ -1,4 +1,4 @@
 variable "repository" {
-  type = string
+  type        = string
   description = "The name of the repository"
 }
